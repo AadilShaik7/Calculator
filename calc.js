@@ -1,3 +1,7 @@
+let textboxVal1=null;
+
+
+
 const button9= document.getElementById("button9");
 button9.addEventListener("click",handleClickFunc);
 
@@ -49,7 +53,10 @@ buttonAC.addEventListener("click",handleClickFunc);
 
 
 function handleClickFunc(event){
+    let clickedButton=event.srcElement.innerHTML;
     console.log(event.srcElement.innerHTML);
-    
+    let text=document.getElementById("calcText");
+    textboxVal1=textboxVal1===null?event.srcElement.innerHTML.toString(): textboxVal1+clickedButton.toString();
+    text.value=textboxVal1;
 
 }
