@@ -53,10 +53,24 @@ buttonAC.addEventListener("click",handleClickFunc);
 
 
 function handleClickFunc(event){
+    const regex = /^[0-9]+$/;
     let clickedButton=event.srcElement.innerHTML;
-    console.log(event.srcElement.innerHTML);
+    // console.log();
     let text=document.getElementById("calcText");
-    textboxVal1=textboxVal1===null?event.srcElement.innerHTML.toString(): textboxVal1+clickedButton.toString();
-    text.value=textboxVal1;
+    if (regex.test(clickedButton))      
+    {
+        textboxVal1=textboxVal1===null?event.srcElement.innerHTML.toString(): textboxVal1+clickedButton.toString();
+
+    }
+    else if (clickedButton!=="=")
+    {
+            console.log(clickedButton);
+    }
+
+    else
+    {
+        console.log(clickedButton);
+    }
+        text.value=textboxVal1;
 
 }
